@@ -23,3 +23,13 @@ const nextConfig = {
 }
 
 export default nextConfig
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export', // This is the crucial line
+  images: {
+    unoptimized: true, // Required if using the next/image component
+  },
+};
+
+module.exports = nextConfig;
