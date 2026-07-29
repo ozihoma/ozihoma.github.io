@@ -1,7 +1,0 @@
-{
-  "name": "henry-azubuike-portfolio",
-  "buildCommand": "pnpm build",
-  "installCommand": "pnpm install",
-  "env": {},
-  "regions": ["iad1"]
-}
