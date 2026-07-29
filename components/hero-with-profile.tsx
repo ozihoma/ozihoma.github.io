@@ -44,7 +44,7 @@ export default function HeroWithProfile() {
   }
 
   return (
-    <section id="home" className="relative flex min-h-screen items-center justify-center bg-[#0a0a0a] overflow-hidden pt-20">
+    <section id="home" className="relative flex lg:min-h-screen items-center justify-center bg-[#0a0a0a] overflow-hidden pt-16 lg:pt-20 pb-8 lg:pb-0">
       {/* Level Up Notification */}
       {showLevelUp && (
         <motion.div
@@ -64,7 +64,7 @@ export default function HeroWithProfile() {
 
       {/* Content */}
       <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-12 min-h-[calc(100vh-80px)]">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 lg:min-h-[calc(100vh-80px)]">
           {/* Left: Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -255,11 +255,11 @@ export default function HeroWithProfile() {
           </motion.div>
         </div>
 
-        {/* Scroll indicator */}
+        {/* Scroll indicator - Hidden on mobile */}
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          className="hidden lg:flex absolute bottom-8 left-1/2 transform -translate-x-1/2"
         >
           <ChevronDown className="text-[#549642] animate-pulse" size={32} />
         </motion.div>
