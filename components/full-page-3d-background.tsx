@@ -154,29 +154,7 @@ export default function FullPage3DBackground() {
         <FloatingCode />
       </Canvas>
 
-      {/* Multiple gradient overlays for visual depth - kept subtle */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0a0a]/5 to-[#0a0a0a]/10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/20 via-transparent to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/5 via-transparent to-[#0a0a0a]/5" />
-      </div>
 
-      {/* Scanlines effect for retro gaming aesthetic */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: `repeating-linear-gradient(
-            0deg,
-            rgba(0, 0, 0, 0.08) 0px,
-            rgba(0, 0, 0, 0.08) 1px,
-            transparent 1px,
-            transparent 2px
-          )`,
-        }}
-      />
-
-      {/* Vignette effect */}
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_20%,rgba(0,0,0,0.3)_100%)]" />
     </div>
   )
 }

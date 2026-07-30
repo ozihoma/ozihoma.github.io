@@ -45,8 +45,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="bg-[#0a0a0a] scroll-smooth">
-      <body className={`${inter.className} ${ibmPlexMono.variable} dark bg-[#0a0a0a] text-white`}>
+    <html lang="en" suppressHydrationWarning className="scroll-smooth">
+      <body className={`${inter.className} ${ibmPlexMono.variable} dark bg-transparent text-white`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
           <FullPage3DBackground />
           <div className="relative z-20">
