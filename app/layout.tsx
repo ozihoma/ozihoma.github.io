@@ -49,7 +49,7 @@ export default function RootLayout({
       <body className={`${inter.className} ${ibmPlexMono.variable} dark bg-[#0a0a0a] text-white`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
           <FullPage3DBackground />
-          <div className="relative z-10">
+          <div className="relative z-20">
             <AnimatedBackground />
             <Navbar />
             {children}
