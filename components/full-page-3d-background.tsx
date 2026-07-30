@@ -134,11 +134,11 @@ export default function FullPage3DBackground() {
     <div className="fixed inset-0 w-full h-full pointer-events-none z-0">
       <Canvas
         camera={{ position: [0, 0, 5], fov: 75 }}
-        gl={{ antialias: true, alpha: false, dpr: [1, 1.5], preserveDrawingBuffer: true }}
+        gl={{ antialias: true, alpha: true, dpr: [1, 1.5], preserveDrawingBuffer: true, transparent: true }}
         style={{ width: '100%', height: '100%', position: 'fixed', top: 0, left: 0 }}
         dpr={[1, 1.5]}
         onCreated={(state) => {
-          state.scene.background = new THREE.Color(0x0a0a0a)
+          state.scene.background = null
           state.scene.fog = new THREE.Fog(0x0a0a0a, 15, 40)
         }}
       >
