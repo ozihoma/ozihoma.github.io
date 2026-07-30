@@ -56,7 +56,7 @@ function ParticleField() {
       <bufferGeometry attach="geometry">
         <bufferAttribute attach="attributes-position" count={2000} array={new Float32Array(6000)} itemSize={3} />
       </bufferGeometry>
-      <pointsMaterial size={0.3} sizeAttenuation={true} color={0x00ff00} opacity={1} transparent={false} wireframe={false} />
+      <pointsMaterial size={0.5} sizeAttenuation={true} color={0x00ff00} emissive={0x00ff00} opacity={0.8} transparent={true} wireframe={false} />
     </points>
   )
 }
@@ -133,20 +133,20 @@ export default function FullPage3DBackground() {
   return (
     <div className="fixed inset-0 w-full h-full pointer-events-none z-0">
       <Canvas
-        camera={{ position: [0, 0, 5], fov: 75 }}
+        camera={{ position: [0, 0, 15], fov: 50 }}
         gl={{ antialias: true, alpha: true, dpr: [1, 1.5], preserveDrawingBuffer: true, transparent: true }}
         style={{ width: '100%', height: '100%', position: 'fixed', top: 0, left: 0 }}
         dpr={[1, 1.5]}
         onCreated={(state) => {
           state.scene.background = null
-          state.scene.fog = new THREE.Fog(0x0a0a0a, 15, 40)
+          state.scene.fog = new THREE.Fog(0x0a0a0a, 5, 100)
         }}
       >
         {/* Lighting setup for depth */}
-        <ambientLight intensity={1} />
-        <directionalLight position={[10, 10, 5]} intensity={1.5} />
-        <pointLight position={[-10, -10, 5]} intensity={1.2} color={0x549642} />
-        <pointLight position={[0, 10, -10]} intensity={1} color={0x00ff00} />
+        <ambientLight intensity={2} />
+        <directionalLight position={[10, 10, 10]} intensity={2} />
+        <pointLight position={[-10, -10, 10]} intensity={2} color={0x549642} />
+        <pointLight position={[0, 10, 5]} intensity={2} color={0x00ff00} />
 
         {/* Background layers */}
         <ParticleField />
