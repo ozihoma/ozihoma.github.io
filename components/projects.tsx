@@ -167,6 +167,15 @@ export default function Projects() {
       },
     },
     {
+      title: "Upside Network",
+      description:
+        "A delivery platform connecting customers with nearby riders for quick, secure personal shipments and business logistics across Nigeria.",
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/myupside-org-1440x810desktop-0b80e0-fl9Ezl7FlK4g4f4lPlrHb4qCbUfGNT.png",
+      tags: ["React.js", "Vite", "TypeScript", "Node.js", "MongoDB"],
+      liveUrl: "https://myupside.org/",
+      category: "Logistics",
+    },
+    {
       title: "Rococoins",
       description:
         "A crypto finance platform for managing digital assets, peer-to-peer trades, staking, NFTs, and gift cards, with naira funding and bank withdrawals.",
