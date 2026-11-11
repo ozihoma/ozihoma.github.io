@@ -10,7 +10,11 @@ interface Project {
   description: string
   image: string
   tags: string[]
-  liveUrl: string
+  liveUrl?: string
+  storeLinks?: {
+    playStore: string
+    appStore: string
+  }
   category: string
   featured?: boolean
 }
@@ -55,6 +59,9 @@ export default function ProjectDetailModal({ project, isOpen, onClose }: Project
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="project-detail-title"
             className="relative w-full max-w-5xl max-h-[90vh] overflow-hidden bg-[#0a0a0a]/60 backdrop-blur-2xl border border-[#549642]/30 rounded-xl shadow-2xl flex flex-col md:flex-row"
           >
             {/* Close Button */}
@@ -86,7 +93,7 @@ export default function ProjectDetailModal({ project, isOpen, onClose }: Project
                 </span>
               </div>
               
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 font-mono-title">
+              <h2 id="project-detail-title" className="text-2xl md:text-3xl font-bold text-white mb-4 font-mono-title">
                 {project.title}
               </h2>
               
@@ -114,15 +121,40 @@ export default function ProjectDetailModal({ project, isOpen, onClose }: Project
               </div>
 
               <div className="mt-auto pt-6 flex flex-col gap-3">
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="custom-btn-primary w-full flex items-center justify-center gap-2 py-3"
-                >
-                  Visit Live Site
-                  <ExternalLink className="w-4 h-4" />
-                </a>
+                {project.storeLinks ? (
+                  <div className="grid grid-cols-2 gap-2">
+                    <a
+                      href={project.storeLinks.playStore}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="custom-btn-primary flex min-w-0 items-center justify-center gap-1 px-2 py-3 text-center text-xs"
+                      style={{ whiteSpace: "normal", lineHeight: 1.25 }}
+                    >
+                      Get it on Playstore
+                      <ExternalLink className="w-4 h-4 shrink-0" aria-hidden="true" />
+                    </a>
+                    <a
+                      href={project.storeLinks.appStore}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="custom-btn-primary flex min-w-0 items-center justify-center gap-1 px-2 py-3 text-center text-xs"
+                      style={{ whiteSpace: "normal", lineHeight: 1.25 }}
+                    >
+                      Get it on Appstore
+                      <ExternalLink className="w-4 h-4 shrink-0" aria-hidden="true" />
+                    </a>
+                  </div>
+                ) : (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="custom-btn-primary w-full flex items-center justify-center gap-2 py-3"
+                  >
+                    Visit Live Site
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                )}
                 <button
                   onClick={onClose}
                   className="w-full py-3 text-sm font-mono text-gray-400 hover:text-white transition-colors duration-200 border border-white/5 rounded hover:bg-white/5"

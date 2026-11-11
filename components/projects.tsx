@@ -32,7 +32,16 @@ function ProjectCard({ project, index, onClick }: { project: any; index: number;
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onClick={onClick}
-      className="group block overflow-hidden perspective cursor-pointer"
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault()
+          onClick()
+        }
+      }}
+      role="button"
+      tabIndex={0}
+      aria-label={`View details for ${project.title}`}
+      className="group block overflow-hidden perspective cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#549642] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0a]"
       style={{
         perspective: "1000px",
         transform: `perspective(1000px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
@@ -146,6 +155,18 @@ export default function Projects() {
       featured: true,
     },
     {
+      title: "Upside Xpress",
+      description:
+        "A logistics app for fast, reliable delivery. Book packages, follow delivery routes, and manage your account securely.",
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/apps-apple-com-1440x810desktop-1a432f-t26ZkimA8xH7CV7mJCJxg9t6RJg35p.png",
+      tags: ["Flutter", "Node.js", "MongoDB"],
+      category: "Logistics",
+      storeLinks: {
+        playStore: "https://play.google.com/store/apps/details?id=site.myupside.app&pcampaignid=web_share",
+        appStore: "https://apps.apple.com/us/app/upside-network/id6785807018",
+      },
+    },
+    {
       title: "Gookway Marketplace",
       description:
         "E-commerce marketplace connecting vendors with customers. Features product listings, vendor management, reviews, and secure checkout integration.",
@@ -198,7 +219,7 @@ export default function Projects() {
     },
   ]
 
-  const categories = ["All", "Fintech", "Healthcare", "Education", "Web"]
+  const categories = ["All", "Fintech", "Healthcare", "Education", "Logistics", "Web"]
   const filteredProjects =
     activeFilter === "All" ? projects : projects.filter((project) => project.category === activeFilter)
 
