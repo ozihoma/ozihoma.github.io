@@ -135,7 +135,7 @@ export default function HeroWithProfile() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="flex flex-row gap-4 mb-8"
+              className="flex flex-wrap gap-3 sm:gap-4 mb-8"
             >
               <button
                 onClick={scrollToProjects}
@@ -144,6 +144,14 @@ export default function HeroWithProfile() {
                 View Projects
                 <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
               </button>
+              <a
+                href="https://docs.google.com/document/d/1uWgOj1wUDBKUo_2JfLyMLUncldgCv1hLGXNIW6rPm3k/edit?usp=drivesdk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 sm:px-8 sm:py-3 text-sm sm:text-base border border-[#549642] text-[#549642] font-bold rounded-lg hover:bg-[#549642]/10 transition-all duration-300"
+              >
+                My CV
+              </a>
               <a
                 href="#contact"
                 className="px-4 py-2 sm:px-8 sm:py-3 text-sm sm:text-base border border-[#549642] text-[#549642] font-bold rounded-lg hover:bg-[#549642]/10 transition-all duration-300"

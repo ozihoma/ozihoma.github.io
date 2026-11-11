@@ -223,7 +223,7 @@ export default function Projects() {
       description: "A healthcare platform providing medical services, information, and patient resources.",
       image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/onehealth-screenshot-XfI95qDvCODlYhV5z23lLCgO2y3QZW.jpg",
       tags: ["HTML", "Bootstrap", "Healthcare", "Javascript"],
-      liveUrl: "https://web.onehealthng.com/",
+      liveUrl: "https://onehealthng.com/",
       category: "Healthcare",
     },
     {
