@@ -167,6 +167,15 @@ export default function Projects() {
       },
     },
     {
+      title: "Rococoins",
+      description:
+        "A crypto finance platform for managing digital assets, peer-to-peer trades, staking, NFTs, and gift cards, with naira funding and bank withdrawals.",
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/rococoins-com-1440x810desktop-7b8dff-j495fCOAQiTkADCWcskXRTK0zSByZ5.png",
+      tags: ["Next.js", "TypeScript", "Node.js"],
+      liveUrl: "https://rococoins.com/",
+      category: "Fintech",
+    },
+    {
       title: "Gookway Marketplace",
       description:
         "E-commerce marketplace connecting vendors with customers. Features product listings, vendor management, reviews, and secure checkout integration.",
