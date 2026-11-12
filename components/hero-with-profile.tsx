@@ -167,16 +167,16 @@ export default function HeroWithProfile() {
               transition={{ delay: 0.6 }}
               className="flex gap-6 justify-center"
             >
-              <a href="#" className="text-gray-400 hover:text-[#549642] transition-colors">
+              <a href="https://github.com/ozihoma" className="text-gray-400 hover:text-[#549642] transition-colors">
                 <Github size={24} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-[#549642] transition-colors">
+              <a href="https://www.linkedin.com/in/ozihoma" className="text-gray-400 hover:text-[#549642] transition-colors">
                 <Linkedin size={24} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-[#549642] transition-colors">
+              <a href="mailto: azubuikeho@gmail.com" className="text-gray-400 hover:text-[#549642] transition-colors">
                 <Mail size={24} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-[#549642] transition-colors">
+              <a href="https://instagram.com/ozihoma" className="text-gray-400 hover:text-[#549642] transition-colors">
                 <Instagram size={24} />
               </a>
             </motion.div>
